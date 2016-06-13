@@ -1,3 +1,14 @@
 var ForagerBee = function() {
+	Bee.call(this)
+	this.age = 10; 
+	this.job = 'find pollen';
+	this.canFly = true; 
+	this.treasureChest = [];
 };
 
+ForagerBee.prototype = Object.create(Bee.prototype)
+ForagerBee.prototype.eat = function(){}
+ForagerBee.prototype.forage = function(input){
+	this.treasureChest.push(input)
+}
+ForagerBee.prototype.constructor = ForagerBee 
